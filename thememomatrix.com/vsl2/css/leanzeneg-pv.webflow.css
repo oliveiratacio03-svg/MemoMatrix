@@ -541,6 +541,8 @@ a {
   width: 100%;
   text-decoration: none;
   display: flex;
+  position: relative;
+  z-index: 2;
 }
 
 .potes-holder-div.potes-6 {
