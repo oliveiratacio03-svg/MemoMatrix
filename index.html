@@ -28,6 +28,8 @@
      
         document.querySelectorAll('a').forEach(l => {
           if (!l.href || l.href.indexOf('#') === 0) return;
+          // Não modificar links de checkout do BuyGoods
+          if (l.href.indexOf('buygoods.com') > -1) return;
      
           const [b, h = ''] = l.href.split('#');
           const [p, q = ''] = b.split('?');
@@ -875,7 +877,7 @@
               <p><strong>Accelerated Progress</strong> – Because you receive the exact concentration your brain craves, you’ll conquer brain fog, memory lapses, and low focus more rapidly than you ever thought possible.</p>
             </div>
             <!-- CHECKOUT LINK | Bônus Personalized Formula (ADD TO CART) | substituir href="#" abaixo -->
-            <a href="https://buygoods.com/secure/checkout.html?account_id=11650&product_codename=mem6_fun_b4_ab&redirect=aHR0cHM6Ly90aGVtZW1vbWF0cml4LmNvbS9mdW5uZWxiMy9wZXp1cDEtMDYv&aff_id=776983" class="bonuses-product-button w-button">ADD TO CART</a>
+            <a href="https://buygoods.com/secure/checkout.html?account_id=11650&aff_id=776983&product_codename=mem6_fun_b3&redirect=aHR0cHM6Ly9tZW1vbWF0cml4LmNvbS9mdW5uZWxiMy91cDEtMDYv" class="bonuses-product-button w-button" target="_blank">ADD TO CART</a>
           </div>
         </div>
       </div>
