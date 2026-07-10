@@ -159,7 +159,6 @@
     var attempts = 0;
     var elsHiddenList = [];
     var elsDisplayed = false;
-    var checkoutFired = false;
     var countdownsStarted = false; // Nova flag para controlar se os countdowns já iniciaram
     var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
     var alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`;
@@ -208,10 +207,6 @@
         return setTimeout(function () { startWatchVideoProgress() }, 1000);
       }
       smartplayer.instances[0].on('timeupdate', () => {
-        if (!checkoutFired && smartplayer.instances[0].video.currentTime >= 2738) {
-          checkoutFired = true;
-          gtag_report_conversion_checkout();
-        }
         if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
         if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
         showHiddenElements();
@@ -607,7 +602,7 @@
           <div class="form-content-part1">
             <h2 class="form-content-part1-tittle">Congratulations!</h2>
             <p class="form-content-part1-paragraph">Your personalized formula is ready — and it’s been custom-made to help you reach your memory and cognitive goals faster than ever!<br><br>And there’s more: By choosing our 6-bottle program, you unlock a MEGA EXCLUSIVE discount.<br><br>No more brain fog. No more forgotten names!<br>‍<br>Ready to start?</p>
-            <a href="https://thememomatrix.com/vsl2/?aff_id=776983" class="button-congrats w-button">Unlock my discount and personalized formula!</a>
+            <a href="https://thememomatrix.com/vsl2/?aff_id=776983" class="button-congrats w-button" onclick="gtag_report_conversion_checkout()">Unlock my discount and personalized formula!</a>
           </div>
           <div class="form-content-part2">
             <h5 class="form-content-part2-tittle">YOUR CUSTOM FORMULA IS READY</h5><img loading="lazy" src="./thememomatrix.com/vsl2/images/produto-erbs.png" alt="" class="form-content-part2-image">
