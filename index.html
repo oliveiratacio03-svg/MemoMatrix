@@ -464,6 +464,12 @@
                 e.preventDefault();
                 hideElement('.section-form');
                 showElement('.esconder');
+                setTimeout(function() {
+                    const orderSection = document.getElementById('Order');
+                    if (orderSection) {
+                        orderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 50);
             });
         }
     });
