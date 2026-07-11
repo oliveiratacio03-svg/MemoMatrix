@@ -510,6 +510,10 @@ a {
   display: flex;
 }
 
+.potes-button-holder img {
+  pointer-events: none;
+}
+
 .potes-div {
   grid-column-gap: 30px;
   grid-row-gap: 30px;
